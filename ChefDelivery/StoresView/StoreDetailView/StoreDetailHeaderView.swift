@@ -1,17 +1,17 @@
 //
-//  StoreDetailView.swift
+//  StoreDetailHeaderView.swift
 //  ChefDelivery
 //
-//  Created by Daniel Ancines on 23/03/25.
+//  Created by Daniel Ancines on 25/03/25.
 //
 
 import SwiftUI
 
-struct StoreDetailView: View {
+struct StoreDetailHeaderView: View {
     let store: StoreType
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack{
             Image(store.headerImage)
                 .resizable()
                 .scaledToFit()
@@ -39,20 +39,10 @@ struct StoreDetailView: View {
             }
             .padding(.vertical, 8)
             .padding(.horizontal)
-            
-            Text("Produtos")
-                .font(.title2)
-                .bold()
-                .padding()
-            
-            ForEach(store.products){ product in
-                
-            }
         }
-        .navigationTitle(store.name)
     }
 }
 
 #Preview {
-    StoreDetailView(store: storesMock[0])
+    StoreDetailHeaderView(store: storesMock[0])
 }
