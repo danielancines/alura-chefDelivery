@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ProductDetailButtonView: View {
+    var buttonAction: () -> Void = { }
+    public init(_ action: @escaping () -> Void){
+        buttonAction = action
+    }
+    
     var body: some View {
         Button {
-            print("Button pressed")
+            buttonAction()
         } label: {
             HStack{
                 Image(systemName: "cart")
@@ -30,5 +35,7 @@ struct ProductDetailButtonView: View {
 }
 
 #Preview {
-    ProductDetailButtonView()
+    ProductDetailButtonView(){
+        
+    }
 }

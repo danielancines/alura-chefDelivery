@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
     let product: ProductType
     @State private var quantity = 1
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack{
@@ -21,7 +22,9 @@ struct ProductDetailView: View {
             
             Spacer()
             
-            ProductDetailButtonView()
+            ProductDetailButtonView {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

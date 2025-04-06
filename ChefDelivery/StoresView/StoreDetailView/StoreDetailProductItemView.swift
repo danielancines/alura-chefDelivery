@@ -13,11 +13,14 @@ struct StoreDetailProductItemView: View {
         HStack(spacing:8){
             VStack(alignment: .leading, spacing: 8){
                 Text(product.name)
+                    .foregroundColor(.primary)
                     .bold()
                 Text(product.description)
+                    .foregroundColor(.primary)
                     .foregroundColor(.black.opacity(0.5))
                     .multilineTextAlignment(.leading)
                 Text(product.formattedPrice)
+                    .foregroundColor(.primary)
             }
             
             Spacer()
