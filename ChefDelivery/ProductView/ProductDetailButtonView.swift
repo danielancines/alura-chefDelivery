@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct ProductDetailButtonView: View {
-    var buttonAction: () -> Void = { }
-    public init(_ action: @escaping () -> Void){
-        buttonAction = action
-    }
+    var onButtonPressed: () -> Void = { }
     
     var body: some View {
         Button {
-            buttonAction()
+            onButtonPressed()
         } label: {
             HStack{
                 Image(systemName: "cart")

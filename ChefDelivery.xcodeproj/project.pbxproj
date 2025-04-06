@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		65431F2A2DA30D4700976FA7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 65431F292DA30D4700976FA7 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		650EB5622CEE2B630000B0A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65431F2A2DA30D4700976FA7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = ChefDelivery;
 			packageProductDependencies = (
+				65431F292DA30D4700976FA7 /* Alamofire */,
 			);
 			productName = ChefDelivery;
 			productReference = 650EB5512CEE2B620000B0A9 /* ChefDelivery.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 650EB5482CEE2B620000B0A9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				65431F282DA30CA800976FA7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 650EB5522CEE2B620000B0A9 /* Products */;
 			projectDirPath = "";
@@ -560,6 +569,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65431F282DA30CA800976FA7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65431F292DA30D4700976FA7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65431F282DA30CA800976FA7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 650EB5492CEE2B620000B0A9 /* Project object */;
 }

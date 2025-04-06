@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    let product: ProductType
     @State private var quantity = 1
     @Environment(\.presentationMode) var presentationMode
+    
+    let product: ProductType
+    var service = StoreService()
     
     var body: some View {
         VStack{
@@ -23,8 +25,26 @@ struct ProductDetailView: View {
             Spacer()
             
             ProductDetailButtonView {
-                presentationMode.wrappedValue.dismiss()
+                Task{
+                    await sendOrder()
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
+        }
+    }
+    
+    func sendOrder() async {
+        do{
+            let result = try await service.sendOrder(product: product)
+            
+            switch result {
+            case .success (let message):
+                print(message)
+            case .failure(let error):
+                print(error)
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
